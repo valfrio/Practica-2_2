@@ -51,19 +51,32 @@ Para ello debemos de añadir en location deny ip, siendo ip la ip que quieres de
 
 ![imagen 9](assets/images/11.png)
 
-### 4.2 Permitir IPs
-### 4.3 Satisfy all
+### 4.2 Permitir 
+Para ello solo debemos de poner allow delante da la ip, de forma que no nos pedirá entrar con esa ip.
+
+![imagen 10](assets/images/12.png)
+
+Ahora si me permite entrar
+
+![imagen 11](assets/images/13.png)
+
+### 4.3 Satisfy all o any
+
+Para ello debemos de colocar arriba satisfy all o satisfy any. Si ponemos satisfy all, un usuario debe de cumplir que la ip sea la permitida y además que las ceredenciales sean validas. 
+
+![imagen 12](assets/images/15.png)
+
+Al intentar entrar con esa credencial no me lo permitió. Por otro lado, al poner satisfy any el usuario solo debe de satisfacer 1 de las dos. De esta forma, al intentar entrar no me ha pedido credenciales dado que mi ip estaba permitida.
+
+![imagen 13](assets/images/14.png)
 
 ## 5. Cuestiones
 ### 5.1 Cuestión 1
 
 *Supongamos que yo soy el cliente con la IP 172.1.10.15 e intento acceder al directorio web_muy_guay de mi sitio web, equivocándome al poner el usuario y contraseña. ¿Podré acceder?¿Por qué?*
 
-No podrá acceder ya que el satisfy all le obliga a cumplir todos los requisitos, habiendo fallado la autentificacion
+No podrá acceder ya que el satisfy all le obliga a cumplir todos los requisitos, habiendo fallado la autentificación
 
-```
-
-```
 ### 5.2 Cuestión 2
 
 *ask "Cuestión 1" Supongamos que yo soy el cliente con la IP 172.1.10.15 e intento acceder al directorio web_muy_guay de mi sitio web, introduciendo correctamente usuario y contraseña. ¿Podré acceder?¿Por qué?*
